@@ -13,7 +13,7 @@ Login por e-mail e senha definida pelo administrador, sem autocadastro (RF01). A
 - **CSRF:** `SameSite=Lax`, verificação do cabeçalho `Origin` nas rotas de escrita e corpo JSON obrigatório.
 - **Bloqueio por tentativas:** contador por e-mail e IP, conforme `login.feature`.
 - **Autorização** no backend em toda rota: perfil, marcação de administrador, empresa e centro de custo (RNF03).
-- **Recuperação de senha:** token de uso único com validade de 1 hora (`tokens_senha`), enviado por e-mail pelo **SMTP da Locaweb** (nodemailer) atrás da porta `EnviadorEmail`. Em desenvolvimento, uma implementação que só escreve no log; em produção, nunca.
+- **Recuperação de senha:** token de uso único com validade de 1 hora (`tokens_senha`), enviado por e-mail pela **caixa de e-mail hospedada na Locaweb** (`email-ssl.com.br`, porta 465, SSL/TLS; nodemailer) atrás da porta `EnviadorEmail`. O remetente é uma caixa dedicada do domínio da empresa, e a conta que se autentica é a própria remetente (exigência da Locaweb). Em desenvolvimento, uma implementação que só escreve no log; em produção, nunca.
 
 ## Consequências
 

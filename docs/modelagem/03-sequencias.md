@@ -141,14 +141,7 @@ sequenceDiagram
     else Não existe
         A->>A: Sanitiza o nome e monta o corpo (typesId FO, N, número com espaço)
         A->>S: POST /creditors (reserva cota)
-        alt Aceito
-            S-->>A: 201 com Location .../creditors/{id}
-        else 400 Número de inscrição estadual não informado
-            A->>S: POST /creditors com o número ISENTO (reserva cota)
-            S-->>A: 201 com Location
-            A->>S: PATCH /creditors/{id} com o número espaço (reserva cota)
-            S-->>A: 204
-        end
+        S-->>A: 201 com Location .../creditors/{id}
         A->>D: Upsert em credores com criado_pelo_app_em
     end
     A-->>P: Credor com o id do Sienge

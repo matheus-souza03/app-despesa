@@ -60,7 +60,7 @@ Cada chamada conta. O cliente HTTP reserva a cota **antes** de cada chamada (`co
 | Verificar baixa de um título pago | **Não usado na v1** ("Já dei baixa" só marca no app). Versão futura: +1 por consulta (`GET /bills/{billId}/installments`) |
 | Confirmar ajuste de parcelas | +1 por toque em "Parcelas ajustadas" (`GET /bills/{billId}/installments`) |
 | Conferência de notas | +1 por busca (`GET /bills`) e +1 para anexar (`POST attachments`) |
-| Credor novo (cadastro) | 1 (`POST /creditors`) + 1 se precisar buscar o ID |
+| Credor novo (cadastro) | 1 (`POST /creditors`; o ID vem no header `Location`) |
 | Busca de credor fora do cache | 1 (`GET /creditors`, aceita vários CNPJs na mesma chamada) |
 | Sincronização de cadastros (domingo ou "Sincronizar agora") | ~5 |
 | Títulos alterados (`GET /bills/by-change-date`, domingo) | 1 por semana (mais, se passar de 200) |
@@ -165,11 +165,11 @@ Corpo mínimo usado pelo app:
 - `registerNumber`: CPF ou CNPJ **sem máscara**.
 - `municipalSubscription`: só para pessoa jurídica (não usado).
 - `stateRegistrationType`: **sempre `"N"`** (Não contribuinte — regra do negócio). Códigos confirmados na aba Model: `C` contribuinte, `I` isento, `N` não contribuinte.
-- `stateRegistrationNumber`: **obrigatório e não pode ser vazio** (`""` ou ausente → `400` "Número de inscrição estadual não informado."). Enviar **`" "` (um espaço)**, que fica em branco no cadastro. Aceito no `PATCH`; no `POST` ainda não testado: se o `POST` com `" "` der esse `400`, reenviar com `"ISENTO"` (confirmado no `POST`) e em seguida `PATCH` com `" "` (+1 requisição).
+- `stateRegistrationNumber`: **obrigatório e não pode ser vazio** (`""` ou ausente → `400` "Número de inscrição estadual não informado."). Enviar **`" "` (um espaço)** direto no `POST`, que fica em branco no cadastro (confirmado em 06/11/2026; também aceito no `PATCH`). Não usar `"ISENTO"`.
 - `address.cityId`: código Sienge do município (`data/municipios-sienge.csv`; casar nome normalizado + UF).
 - Texto sanitizado antes de enviar: remover acentos, `&` → `e`, só letras/números/espaços, colapsar espaços.
 - Não enviar: `agents`, `contacts`, `procurators`, `payslipDesonerationYears`, `accountStatement`, `municipalSubscription`, `paymentTypeId` (salvo se o spike mostrar que são obrigatórios).
-- Resposta `201 Credor inserido`. ID **[spike]**: ler do corpo ou do header `Location`; se não vier, `GET /creditors?cnpj=...` (+1 requisição).
+- Resposta `201 Credor inserido`, corpo vazio; o ID vem no header `Location` (`.../creditors/2404`, confirmado). Só se o header faltar: `GET /creditors?cnpj=...` (+1 requisição).
 - Antes de criar, sempre buscar pelo documento (evita duplicata). Se o Sienge estiver indisponível ou sem cota, guardar como "Aguardando cadastro no Sienge" e o worker cria depois.
 
 ## 4. Credor do colaborador
@@ -370,7 +370,7 @@ Pelo mesmo bloqueio de títulos `SE`, **não** usar `PUT /bills/{billId}/budget-
 - [x] ID do `POST /creditors`: header `Location`, corpo vazio.
 - [x] `PATCH /creditors/{id}` funciona em credor criado pela API.
 - [x] `stateRegistrationNumber`: vazio recusado; `"ISENTO"` aceito no POST; `" "` aceito no PATCH.
-- [ ] `stateRegistrationNumber: " "` diretamente no `POST`.
+- [x] `stateRegistrationNumber: " "` diretamente no `POST` (aceito; o plano B com `"ISENTO"` foi removido).
 - [x] Parcelas criadas pela API saem com **Autorizado = Não** e são autorizadas manualmente no Sienge (comportamento aceito).
 - [x] `notes` vazio é recusado; `" "` é aceito.
 - [x] `situation`: `"Não paga"` / `"Totalmente paga"`.
@@ -385,6 +385,9 @@ Pelo mesmo bloqueio de títulos `SE`, **não** usar `PUT /bills/{billId}/budget-
 - [ ] Valores de `type`/`defaultFlag` do Pix.
 
 ## Descobertas
+
+### 06/11/2026 — inscrição estadual no POST /creditors
+- `POST /creditors` com `"stateRegistrationNumber": " "` (um espaço) e `stateRegistrationType "N"` → aceito, com a inscrição em branco no cadastro (confirmado pela equipe). O cadastro de credor custa 1 requisição; não é mais preciso criar com `"ISENTO"` e depois fazer `PATCH`.
 
 ### 23/10/2026 — POST /creditors
 - Sem o campo `stateRegistrationNumber` → `400`: "Número de inscrição estadual não informado."

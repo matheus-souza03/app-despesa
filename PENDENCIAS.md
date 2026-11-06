@@ -18,14 +18,14 @@ Situação em 06/11/2026 (atualizada com as decisões de arquitetura). Fase atua
 - [ ] (Opcional) Permissão para alterar pela API títulos de origem `SE`: permitiria enviar parcelas diferentes sem ajuste manual. → SPEC RF13
 - [ ] (Baixa prioridade) A API aceita CNPJ alfanumérico? → SPEC §7.5
 - [x] Provedor de e-mail para a recuperação de senha (RF01): SMTP da Locaweb (ADR-0007).
-- [ ] Dados do SMTP da Locaweb (`SMTP_*` no `.env`): qual produto a Senco usa (o SMTP Locaweb, com host `smtplw.com.br`, ou a própria caixa de e-mail, com `email-ssl.com.br`), usuário e senha de SMTP, e o remetente. Sugestão: uma caixa dedicada do domínio da empresa (ex.: `naoresponda@`), cadastrada como remetente no painel de SMTP.
+- [ ] **Caixa remetente dos e-mails do app:** a Senco usa a caixa de e-mail hospedada na Locaweb (`email-ssl.com.br`, porta 465, SSL/TLS). Falta escolher ou criar a caixa (sugestão: uma dedicada, como `naoresponda@sencoengenharia.com.br`). O endereço e a senha vão só no `.env` do servidor (`SMTP_USER`, `SMTP_PASSWORD`, `SMTP_FROM`), nunca no git. Só é necessário quando a recuperação de senha for implementada (etapa 6).
 - [ ] **Cota:** em que horário (e fuso) o contador diário do Sienge reinicia, e qual resposta a API dá quando a cota acaba (`429`?). → ADR-0009
 
 ## 3. API do Sienge — confirmar no primeiro uso real ou em teste
 
 Detalhes e contexto em `.claude/skills/sienge-api/SKILL.md`, seção "A confirmar no spike".
 
-- [ ] `stateRegistrationNumber: " "` direto no `POST /creditors` (hoje há o plano B: `"ISENTO"` e depois `PATCH` com espaço). Não trava nada: o código tenta o espaço e, se for recusado, usa o plano B. O teste só diz se cada credor novo custa 1 ou 2 requisições; fazer no cadastro de um fornecedor real que já precise ser criado.
+- [x] `stateRegistrationNumber: " "` direto no `POST /creditors`: aceito (confirmado em 06/11/2026). O plano B com `"ISENTO"` foi removido; o cadastro de credor custa 1 requisição.
 - [ ] Onde fica o centavo de sobra na divisão automática das parcelas.
 - [ ] Anexar arquivo em título lançado pela tela do Sienge (origem `CP`), usado na conferência de notas.
 - [ ] Dar baixa altera o `changedDate` do título? (otimização da RN20; só interessa para a versão futura da conferência de baixa)
