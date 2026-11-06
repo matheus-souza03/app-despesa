@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Nova despesa — colaborador de rua</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#211261}a:hover{color:#3A2A8C}
+</style>
+</helmet>
+<div style="width: 390px; height: 1720px; box-sizing: border-box; display: flex; flex-direction: column; background: #FFFFFF; font-family: 'Barlow', system-ui, sans-serif; color: #1D1A33; font-variant-numeric: tabular-nums">
+  <header style="display: flex; align-items: center; gap: 8px; padding: 12px 12px 12px 8px; border-bottom: 1px solid #E3E1EC">
+    <button type="button" aria-label="Voltar" style="width: 44px; height: 44px; border: 0; background: transparent; color: #211261; display: flex; align-items: center; justify-content: center">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+    </button>
+    <img src="data:image/png;base64,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" alt="Senco Engenharia" width="28" height="28" style="display: block; flex: none">
+    <h1 style="margin: 0; flex-grow: 1; font-size: 22px; line-height: 1.2; font-weight: 600; color: #211261">Nova despesa</h1>
+    <button type="button" style="height: 44px; padding: 0 16px; border: 0; border-radius: 10px; background: #FFC844; color: #211261; font-family: inherit; font-size: 16px; font-weight: 600; display: flex; align-items: center; gap: 8px">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2"></path><path d="M17 3h2a2 2 0 0 1 2 2v2"></path><path d="M21 17v2a2 2 0 0 1-2 2h-2"></path><path d="M7 21H5a2 2 0 0 1-2-2v-2"></path><path d="M8 8v8"></path><path d="M12 8v8"></path><path d="M16 8v8"></path></svg>
+      Escanear
+    </button>
+  </header>
+
+  <div style="padding: 16px 20px 0; display: flex; gap: 8px; flex-wrap: wrap">
+    <span style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; background: #E5F4EE; color: #0E6245; font-size: 13px; line-height: 1.4; font-weight: 500">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+      Nota lida · NF 085.414
+    </span>
+    <span style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; background: #E5F4EE; color: #0E6245; font-size: 13px; line-height: 1.4; font-weight: 500">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+      3 boletos lidos
+    </span>
+  </div>
+
+  <button type="button" style="margin: 16px 20px 0; padding: 16px; border: 1px solid #E3E1EC; border-radius: 12px; background: #FFFFFF; font-family: inherit; text-align: left; display: flex; gap: 12px; align-items: flex-start">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0E6245" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M20 6L9 17l-5-5"></path></svg>
+    <span style="flex-grow: 1; display: flex; flex-direction: column; gap: 4px; min-width: 0">
+      <span style="font-size: 13px; line-height: 1.4; font-weight: 500; color: #5B5876">Documento e credor</span>
+      <span style="font-size: 16px; line-height: 1.3; font-weight: 600; color: #211261">MORELATE DISTRIBUIDORA DE AUTO PEÇAS</span>
+      <span style="font-size: 13px; line-height: 1.4; color: #5B5876">NF 085.414 · Emissão 26/10/2026 · R$ 900,00</span>
+      <span style="font-size: 13px; line-height: 1.4; color: #5B5876">Empresa 1 · Boleto a prazo · DANF</span>
+    </span>
+    <span style="font-size: 13px; line-height: 1.4; color: #211261; text-decoration: underline">Editar</span>
+  </button>
+
+  <section aria-labelledby="sec-pagamento" style="padding: 32px 20px 0; display: flex; flex-direction: column; gap: 16px">
+    <h2 id="sec-pagamento" style="margin: 0; font-size: 16px; line-height: 1.4; font-weight: 600; color: #211261">Pagamento</h2>
+    <fieldset style="margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 8px">
+      <legend style="padding: 0; margin-bottom: 8px; font-size: 13px; line-height: 1.4; font-weight: 500">A nota já está paga?</legend>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+        <label style="min-height: 48px; padding: 0 12px; border: 1px solid #CFCCDA; border-radius: 8px; display: flex; align-items: center; gap: 8px; font-size: 16px"><input type="radio" name="paga"> Sim</label>
+        <label style="min-height: 48px; padding: 0 12px; border: 2px solid #211261; border-radius: 8px; background: #EEEDF7; display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 500; color: #211261"><input type="radio" name="paga" checked="checked"> Não</label>
+      </div>
+      <p style="margin: 0; font-size: 13px; line-height: 1.4; color: #5B5876">Marcado ao ler o primeiro boleto</p>
+    </fieldset>
+
+    <div style="display: flex; flex-direction: column">
+      <div style="display: grid; grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1fr) 44px; gap: 8px; padding: 0 0 8px; font-size: 13px; line-height: 1.4; font-weight: 500; color: #5B5876">
+        <span>Parcela</span><span>Vencimento</span><span style="text-align: right">Valor</span><span></span>
+      </div>
+      <sc-for list="{{ parcelas }}" as="p" hint-placeholder-count="3">
+        <div style="display: grid; grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1fr) 44px; gap: 8px; align-items: center; min-height: 52px; border-top: 1px solid #EEEDF3; font-size: 16px">
+          <span style="display: flex; flex-direction: column"><span>{{ p.numero }}</span><span style="font-size: 13px; color: #0E6245">Boleto</span></span>
+          <span>{{ p.vencimento }}</span>
+          <span style="text-align: right">{{ p.valor }}</span>
+          <button type="button" aria-label="{{ p.remover }}" style="width: 44px; height: 44px; border: 0; background: transparent; color: #5B5876; display: flex; align-items: center; justify-content: center">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18"></path><path d="M6 6l12 12"></path></svg>
+          </button>
+        </div>
+      </sc-for>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding: 12px 0 16px; border-top: 1px solid #EEEDF3"><button type="button" style="height: 48px; border: 1.5px solid #211261; border-radius: 10px; background: #FFFFFF; color: #211261; font-family: inherit; font-size: 16px; font-weight: 500">Escanear boleto</button><button type="button" style="height: 48px; border: 1.5px solid #211261; border-radius: 10px; background: #FFFFFF; color: #211261; font-family: inherit; font-size: 16px; font-weight: 500">Digitar parcela</button><p style="grid-column: 1 / -1; margin: 0; font-size: 13px; line-height: 1.4; color: #5B5876">Adicione outra parcela escaneando o boleto ou digitando vencimento e valor.</p></div><div style="display: flex; justify-content: space-between; padding-top: 12px; border-top: 1px solid #CFCCDA; font-size: 16px; font-weight: 600">
+        <span>Soma das parcelas</span><span>R$ 900,00</span>
+      </div>
+      <p style="margin: 4px 0 0; font-size: 13px; line-height: 1.4; color: #0E6245; text-align: right">Igual ao valor total da nota</p>
+    </div>
+
+    
+  </section>
+
+  <section aria-label="Centro de custo" style="padding: 32px 20px 0">
+    <div role="note" style="padding: 16px; border-radius: 12px; background: #F6F5FA; display: flex; gap: 12px; align-items: flex-start">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#211261" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 8h.01"></path></svg>
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <p style="margin: 0; font-size: 16px; line-height: 1.4; font-weight: 600; color: #211261">Centro de custo definido pelo financeiro</p>
+        <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #5B5876">Você não precisa indicar onde a compra foi usada. Depois do envio, o aprovador de centro de custo faz essa parte.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="sec-anexos" style="padding: 32px 20px 0; display: flex; flex-direction: column; gap: 16px">
+    <h2 id="sec-anexos" style="margin: 0; font-size: 16px; line-height: 1.4; font-weight: 600; color: #211261">Anexos</h2>
+    <div style="display: flex; gap: 12px; align-items: flex-start; padding: 12px; border: 1px solid #E3E1EC; border-radius: 12px">
+      <div aria-hidden="true" style="flex: none; width: 48px; height: 60px; border-radius: 6px; background: #EEEDF3; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #5B5876">PDF</div>
+      <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 8px; min-width: 0">
+        <div style="display: flex; flex-direction: column">
+          <span style="font-size: 16px; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">nota-085414.pdf</span>
+          <span style="font-size: 13px; line-height: 1.4; color: #5B5876">214 KB</span>
+        </div>
+        <label for="tipo-anexo" style="font-size: 13px; line-height: 1.4; font-weight: 500">Tipo de documento</label>
+        <select id="tipo-anexo" style="height: 44px; padding: 0 12px; border: 1px solid #CFCCDA; border-radius: 8px; background: #FFFFFF; font-family: inherit; font-size: 16px; color: #1D1A33">
+          <option selected="selected">DANFe — nota fiscal</option>
+          <option>NFSE — nota de serviço</option>
+          <option>REC — recibo</option>
+          <option>PAG — pagamento sem nota</option>
+          <option>REMB — reembolso</option>
+          <option>COMP — comprovante de pagamento</option>
+        </select>
+      </div>
+      <button type="button" aria-label="Remover anexo nota-085414.pdf" style="flex: none; width: 44px; height: 44px; border: 0; background: transparent; color: #5B5876; display: flex; align-items: center; justify-content: center">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18"></path><path d="M6 6l12 12"></path></svg>
+      </button>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+      <button type="button" style="height: 48px; border: 1.5px solid #211261; border-radius: 10px; background: #FFFFFF; color: #211261; font-family: inherit; font-size: 16px; font-weight: 500">Tirar foto</button>
+      <button type="button" style="height: 48px; border: 1.5px solid #211261; border-radius: 10px; background: #FFFFFF; color: #211261; font-family: inherit; font-size: 16px; font-weight: 500">Escolher arquivo</button>
+    </div>
+  </section>
+
+  <section aria-labelledby="sec-observacao" style="padding: 32px 20px 32px; display: flex; flex-direction: column; gap: 8px">
+    <h2 id="sec-observacao" style="margin: 0 0 8px; font-size: 16px; line-height: 1.4; font-weight: 600; color: #211261">Observação</h2>
+    <label for="obs" style="font-size: 13px; line-height: 1.4; font-weight: 500">Opcional · vai para a observação do título no Sienge</label>
+    <textarea id="obs" rows="3" style="padding: 12px; border: 1px solid #CFCCDA; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.5; color: #1D1A33; resize: vertical">Faixas refletivas - GMC e EFO7F00</textarea>
+    <span style="align-self: flex-end; font-size: 13px; line-height: 1.4; color: #5B5876">33/500</span>
+  </section>
+
+  <div style="flex-grow: 1"></div>
+
+  <footer style="padding: 16px 20px 24px; border-top: 1px solid #E3E1EC; background: #FFFFFF; display: flex; flex-direction: column; gap: 8px">
+    <button type="button" style="height: 52px; border: 0; border-radius: 10px; background: #211261; color: #FFFFFF; font-family: inherit; font-size: 16px; font-weight: 600">Enviar despesa</button>
+    <p style="margin: 0; text-align: center; font-size: 13px; line-height: 1.4; color: #5B5876">Vai para o financeiro definir o centro de custo</p>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1720}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      parcelas: [
+        { numero: '1', vencimento: '10/11/2026', valor: 'R$ 300,00', remover: 'Remover boleto da parcela 1' },
+        { numero: '2', vencimento: '10/12/2026', valor: 'R$ 350,00', remover: 'Remover boleto da parcela 2' },
+        { numero: '3', vencimento: '15/01/2027', valor: 'R$ 250,00', remover: 'Remover boleto da parcela 3' }
+      ],
+      apropriacoes: [
+        { centro: '1062 · KML8D31 · Caminhão GMC', plano: '2.01.04.02 · Peças e componentes', grupo: 'Veículos e equipamentos', valor: 'R$ 450,00' },
+        { centro: '1066 · EFO7F00 · Volkswagen 9.150E', plano: '2.01.04.02 · Peças e componentes', grupo: 'Veículos e equipamentos', valor: 'R$ 450,00' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

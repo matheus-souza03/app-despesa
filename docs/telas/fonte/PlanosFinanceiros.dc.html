@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Planos financeiros</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}a{color:#211261}a:hover{color:#3A2A8C}</style>
+</helmet>
+<div style="box-sizing: border-box; min-height: 1180px; background: #F6F5FA; font-family: 'Barlow', system-ui, sans-serif; color: #1D1A33; font-variant-numeric: tabular-nums">
+  <header style="background: #211261; color: #FFFFFF">
+    <div style="max-width: 1440px; margin: 0 auto; padding: 0 32px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; min-height: 64px">
+      <p style="margin: 0; display: flex; align-items: center; gap: 10px; font-size: 15px; line-height: 1.4; font-weight: 600"><img src="data:image/png;base64,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" alt="Senco Engenharia" width="32" height="32" style="display: block; flex: none">Despesas · Financeiro</p>
+      <nav aria-label="Seções do financeiro" style="display: flex; flex-wrap: wrap; flex-grow: 1">
+        <a href="#aprovacao" style="display: flex; align-items: center; gap: 8px; min-height: 64px; padding: 0 12px; color: #D9D6EE; text-decoration: none; font-size: 15px">Aprovação <span style="font-size: 13px">12</span></a>
+        <a href="#titulos" style="display: flex; align-items: center; gap: 8px; min-height: 64px; padding: 0 12px; color: #D9D6EE; text-decoration: none; font-size: 15px">Títulos</a>
+        <a href="#conferencia" style="display: flex; align-items: center; gap: 8px; min-height: 64px; padding: 0 12px; color: #D9D6EE; text-decoration: none; font-size: 15px">Conferência</a>
+        <a href="#baixas" style="display: flex; align-items: center; gap: 8px; min-height: 64px; padding: 0 12px; color: #D9D6EE; text-decoration: none; font-size: 15px">Baixas pendentes <span style="font-size: 13px">5</span></a>
+        <a href="#faturas" style="display: flex; align-items: center; gap: 8px; min-height: 64px; padding: 0 12px; color: #D9D6EE; text-decoration: none; font-size: 15px">Faturas a vencer <span style="font-size: 13px">2</span></a>
+        <a href="#erros" style="display: flex; align-items: center; gap: 8px; min-height: 64px; padding: 0 12px; color: #D9D6EE; text-decoration: none; font-size: 15px">Erros <span style="font-size: 13px">1</span></a>
+        <a href="#planos" aria-current="page" style="display: flex; align-items: center; gap: 8px; min-height: 64px; padding: 0 12px; color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 600; box-shadow: inset 0 -3px 0 #FFC844">Planos financeiros</a>
+      </nav>
+      <div data-direita="1" style="margin-left: auto; display: flex; align-items: center; gap: 16px">
+        <a href="#nova" style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 10px; background: #FFC844; color: #211261; text-decoration: none; font-size: 15px; font-weight: 600">Nova despesa</a>
+        <a href="#administracao" style="color: #D9D6EE; font-size: 15px; text-decoration: none">Administração</a>
+        <button type="button" aria-label="Meu usuário: Camilla" style="width: 40px; height: 40px; border-radius: 20px; border: 0; background: #FFFFFF; color: #211261; font-family: inherit; font-size: 13px; font-weight: 600">CT</button>
+      </div>
+    </div>
+  </header>
+  <main style="max-width: 1440px; margin: 0 auto; padding: 24px 32px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px">
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px">
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <h1 style="margin: 0; font-size: 24px; line-height: 1.2; font-weight: 600; color: #211261">Planos financeiros</h1>
+        <p style="margin: 0; font-size: 15px; line-height: 1.4; color: #5B5876">Planos do Sienge que aparecem nas despesas · 84 liberados em 16 grupos</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+        <button type="button" style="height: 44px; padding: 0 16px; border: 1.5px solid #211261; border-radius: 10px; background: #FFFFFF; color: #211261; font-family: inherit; font-size: 15px; font-weight: 500">Importar lista</button>
+        <button type="button" style="height: 44px; padding: 0 16px; border: 1.5px solid #211261; border-radius: 10px; background: #FFFFFF; color: #211261; font-family: inherit; font-size: 15px; font-weight: 500">Atualizar do Sienge</button>
+      </div>
+    </div>
+    <div role="note" style="padding: 12px 16px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E3E1EC; font-size: 13px; line-height: 1.5; color: #5B5876">Planos novos são criados direto no Sienge. Depois de criar, toque em <strong style="font-weight: 600; color: #211261">Atualizar do Sienge</strong> (1 requisição) e libere o plano em "Adicionar do Sienge". Só aparecem planos de despesa (grupo 2) que sejam de resultado e estejam ativos.</div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start">
+      <section aria-labelledby="t-liberados" style="flex: 999 1 640px; min-width: 0; background: #FFFFFF; border: 1px solid #E3E1EC; border-radius: 12px; display: flex; flex-direction: column">
+        <div style="padding: 16px 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid #E3E1EC">
+          <h2 id="t-liberados" style="margin: 0; font-size: 15px; line-height: 1.4; font-weight: 600; color: #211261">Liberados no app</h2>
+          <label for="p-busca" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Buscar plano liberado</label>
+          <input id="p-busca" placeholder="Buscar por código ou nome" style="height: 44px; padding: 0 10px; border: 1px solid #CFCCDA; border-radius: 8px; background: #FFFFFF; font-family: inherit; font-size: 15px; color: #1D1A33; min-width: 0; box-sizing: border-box; width: 280px">
+        </div>
+        <sc-for list="{{ abertos }}" as="g" hint-placeholder-count="2">
+          <div style="display: flex; flex-direction: column; border-bottom: 1px solid #E3E1EC">
+            <button type="button" aria-expanded="true" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 0 20px; border: 0; background: #F6F5FA; font-family: inherit; text-align: left">
+              <span style="font-size: 15px; font-weight: 600; color: #211261">{{ g.codigo }} · {{ g.nome }}</span>
+              <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #5B5876">{{ g.qtd }} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"></path></svg></span>
+            </button>
+            <sc-for list="{{ g.planos }}" as="p" hint-placeholder-count="6">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; padding: 0 20px 0 36px; border-top: 1px solid #EEEDF3">
+                <span style="display: flex; align-items: baseline; gap: 12px; min-width: 0"><span style="flex: none; width: 92px; font-size: 15px; color: #5B5876">{{ p.codigo }}</span><span style="font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{ p.nome }}</span></span>
+                <button type="button" aria-label="{{ p.rotulo }}" style="flex: none; height: 36px; padding: 0 10px; border: 0; background: transparent; color: #211261; font-family: inherit; font-size: 13px; text-decoration: underline">Tirar do app</button>
+              </div>
+            </sc-for>
+          </div>
+        </sc-for>
+        <sc-for list="{{ fechados }}" as="f" hint-placeholder-count="8">
+          <button type="button" aria-expanded="false" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 0 20px; border: 0; border-bottom: 1px solid #EEEDF3; background: #FFFFFF; font-family: inherit; text-align: left">
+            <span style="font-size: 15px; font-weight: 600; color: #211261">{{ f.titulo }}</span>
+            <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #5B5876">{{ f.qtd }} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span>
+          </button>
+        </sc-for>
+      </section>
+
+      <aside aria-labelledby="t-adicionar" style="flex: 1 1 360px; min-width: 0; background: #FFFFFF; border: 2px solid #211261; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+        <h2 id="t-adicionar" style="margin: 0; font-size: 15px; line-height: 1.4; font-weight: 600; color: #211261">Adicionar do Sienge</h2>
+        <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #5B5876">Procure na lista completa do Sienge um plano que ficou de fora.</p>
+        <label for="p-sienge" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Buscar no Sienge</label>
+        <input id="p-sienge" value="manutenção" style="height: 44px; padding: 0 10px; border: 1px solid #CFCCDA; border-radius: 8px; background: #FFFFFF; font-family: inherit; font-size: 15px; color: #1D1A33; min-width: 0; box-sizing: border-box; width: 100%">
+        <div style="display: flex; flex-direction: column">
+          <sc-for list="{{ resultados }}" as="r" hint-placeholder-count="4">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; border-top: 1px solid #EEEDF3">
+              <span style="display: flex; flex-direction: column; min-width: 0"><span style="font-size: 15px; line-height: 1.3">{{ r.nome }}</span><span style="font-size: 13px; line-height: 1.4; color: #5B5876">{{ r.codigo }} · {{ r.grupo }}</span></span>
+              <sc-if value="{{ r.liberado }}" hint-placeholder-val="{{ true }}"><span style="flex: none; font-size: 13px; color: #0E6245">Já liberado</span></sc-if>
+              <sc-if value="{{ r.livre }}" hint-placeholder-val="{{ false }}"><button type="button" style="flex: none; height: 40px; padding: 0 14px; border: 0; border-radius: 10px; background: #211261; color: #FFFFFF; font-family: inherit; font-size: 13px; font-weight: 500">Liberar</button></sc-if>
+            </div>
+          </sc-for>
+        </div>
+        <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #5B5876">Liberar faz o plano aparecer nas despesas novas. Tirar do app não muda as despesas que já usam o plano.</p>
+      </aside>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1180}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      "abertos": [
+            {
+                  "codigo": "2.01.04",
+                  "nome": "VEÍCULOS E EQUIPAMENTOS",
+                  "qtd": "9 planos liberados",
+                  "planos": [
+                        {
+                              "codigo": "2.01.04.02",
+                              "nome": "Peças e Componentes",
+                              "rotulo": "Tirar do app o plano 2.01.04.02 Peças e Componentes"
+                        },
+                        {
+                              "codigo": "2.01.04.03",
+                              "nome": "Manutenção Preventiva/Corretiva",
+                              "rotulo": "Tirar do app o plano 2.01.04.03 Manutenção Preventiva/Corretiva"
+                        },
+                        {
+                              "codigo": "2.01.04.04",
+                              "nome": "Abastecimento",
+                              "rotulo": "Tirar do app o plano 2.01.04.04 Abastecimento"
+                        },
+                        {
+                              "codigo": "2.01.04.05",
+                              "nome": "Licenciamento",
+                              "rotulo": "Tirar do app o plano 2.01.04.05 Licenciamento"
+                        },
+                        {
+                              "codigo": "2.01.04.06",
+                              "nome": "Seguros",
+                              "rotulo": "Tirar do app o plano 2.01.04.06 Seguros"
+                        },
+                        {
+                              "codigo": "2.01.04.07",
+                              "nome": "Pedágio/Estacionamento",
+                              "rotulo": "Tirar do app o plano 2.01.04.07 Pedágio/Estacionamento"
+                        },
+                        {
+                              "codigo": "2.01.04.09",
+                              "nome": "Ensaio Técnico",
+                              "rotulo": "Tirar do app o plano 2.01.04.09 Ensaio Técnico"
+                        },
+                        {
+                              "codigo": "2.01.04.10",
+                              "nome": "Multas",
+                              "rotulo": "Tirar do app o plano 2.01.04.10 Multas"
+                        },
+                        {
+                              "codigo": "2.01.04.11",
+                              "nome": "Taxas e Outros custos",
+                              "rotulo": "Tirar do app o plano 2.01.04.11 Taxas e Outros custos"
+                        }
+                  ]
+            },
+            {
+                  "codigo": "2.01.01",
+                  "nome": "MATERIAIS E INSUMOS APLICADOS NAS OBRAS E PROJETOS",
+                  "qtd": "10 planos liberados",
+                  "planos": [
+                        {
+                              "codigo": "2.01.01.02",
+                              "nome": "Mão de Obra Contratada",
+                              "rotulo": "Tirar do app o plano 2.01.01.02 Mão de Obra Contratada"
+                        },
+                        {
+                              "codigo": "2.01.01.03",
+                              "nome": "Insumos",
+                              "rotulo": "Tirar do app o plano 2.01.01.03 Insumos"
+                        },
+                        {
+                              "codigo": "2.01.01.04",
+                              "nome": "Locação de Máquinas/ Caminhão/ Equipamentos",
+                              "rotulo": "Tirar do app o plano 2.01.01.04 Locação de Máquinas/ Caminhão/ Equipamentos"
+                        },
+                        {
+                              "codigo": "2.01.01.05",
+                              "nome": "Serviços Terceirizados e Empreiteiros",
+                              "rotulo": "Tirar do app o plano 2.01.01.05 Serviços Terceirizados e Empreiteiros"
+                        },
+                        {
+                              "codigo": "2.01.01.06",
+                              "nome": "Material de Consumo e ferramental",
+                              "rotulo": "Tirar do app o plano 2.01.01.06 Material de Consumo e ferramental"
+                        },
+                        {
+                              "codigo": "2.01.01.07",
+                              "nome": "Despesas com Legalizações e Certidões",
+                              "rotulo": "Tirar do app o plano 2.01.01.07 Despesas com Legalizações e Certidões"
+                        },
+                        {
+                              "codigo": "2.01.01.08",
+                              "nome": "Projetos",
+                              "rotulo": "Tirar do app o plano 2.01.01.08 Projetos"
+                        },
+                        {
+                              "codigo": "2.01.01.09",
+                              "nome": "Uniformes, EPIs e EPCs",
+                              "rotulo": "Tirar do app o plano 2.01.01.09 Uniformes, EPIs e EPCs"
+                        },
+                        {
+                              "codigo": "2.01.01.94",
+                              "nome": "Alimentos e Insumos",
+                              "rotulo": "Tirar do app o plano 2.01.01.94 Alimentos e Insumos"
+                        },
+                        {
+                              "codigo": "2.01.01.98",
+                              "nome": "Taxas e Outros Custos",
+                              "rotulo": "Tirar do app o plano 2.01.01.98 Taxas e Outros Custos"
+                        }
+                  ]
+            }
+      ],
+      "fechados": [
+            {
+                  "titulo": "2.01.02 · MÃO DE OBRA PRÓPRIA E ENCARGOS",
+                  "qtd": "7 planos"
+            },
+            {
+                  "titulo": "2.01.03 · OUTROS GASTOS COM MÃO DE OBRA PRÓPRIA",
+                  "qtd": "5 planos"
+            },
+            {
+                  "titulo": "2.01.05",
+                  "qtd": "4 planos"
+            },
+            {
+                  "titulo": "2.01.06 · LOCALIZAÇÃO",
+                  "qtd": "7 planos"
+            },
+            {
+                  "titulo": "2.01.07",
+                  "qtd": "11 planos"
+            },
+            {
+                  "titulo": "2.01.08 · INFORMÁTICA E TELECOMUNICAÇÕES",
+                  "qtd": "5 planos"
+            },
+            {
+                  "titulo": "2.01.09 · SERVIÇOS ESPECIALIZADOS",
+                  "qtd": "5 planos"
+            },
+            {
+                  "titulo": "2.01.10 · COMERCIAIS",
+                  "qtd": "1 plano"
+            },
+            {
+                  "titulo": "2.02.01",
+                  "qtd": "1 plano"
+            },
+            {
+                  "titulo": "2.04.01 · IMPOSTOS DIRETOS A PAGAR",
+                  "qtd": "6 planos"
+            },
+            {
+                  "titulo": "2.04.02 · TRIBUTOS E ENCARGOS DE FOLHA DE PGTO E TERCEIROS",
+                  "qtd": "3 planos"
+            },
+            {
+                  "titulo": "2.04.04 · IMPOSTOS SOBRE PROPRIEDADES",
+                  "qtd": "3 planos"
+            },
+            {
+                  "titulo": "2.04.05 · PARCELAMENTO DE IMPOSTOS",
+                  "qtd": "4 planos"
+            },
+            {
+                  "titulo": "2.09.03 · SPOLETO",
+                  "qtd": "3 planos"
+            }
+      ],
+      "resultados": [
+            {
+                  "nome": "Manutenção Preventiva/Corretiva",
+                  "codigo": "2.01.04.03",
+                  "grupo": "Veículos e equipamentos",
+                  "liberado": true,
+                  "livre": false
+            },
+            {
+                  "nome": "Mudanças, Manutenção e Obras",
+                  "codigo": "2.01.06.07",
+                  "grupo": "Localização",
+                  "liberado": true,
+                  "livre": false
+            },
+            {
+                  "nome": "Manutenção de Móveis e Utensílios",
+                  "codigo": "2.01.07.07",
+                  "grupo": "2.01.07",
+                  "liberado": true,
+                  "livre": false
+            },
+            {
+                  "nome": "[Plano do Sienge ainda não liberado]",
+                  "codigo": "2.0X.XX.XX",
+                  "grupo": "[grupo]",
+                  "liberado": false,
+                  "livre": true
+            }
+      ]
+};
+  }
+}
+</script>
+</body>
+</html>

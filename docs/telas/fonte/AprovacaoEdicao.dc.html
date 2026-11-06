@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Aprovação — edição da despesa</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#211261}a:hover{color:#3A2A8C}
+</style>
+</helmet>
+<div style="box-sizing: border-box; min-height: 1180px; background: #F6F5FA; font-family: 'Barlow', system-ui, sans-serif; color: #1D1A33; font-variant-numeric: tabular-nums">
+  <header style="background: #211261; color: #FFFFFF">
+    <div style="max-width: 1440px; margin: 0 auto; padding: 0 32px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; min-height: 64px">
+      <p style="margin: 0; display: flex; align-items: center; gap: 10px; font-size: 15px; line-height: 1.4; font-weight: 600"><img src="data:image/png;base64,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" alt="Senco Engenharia" width="32" height="32" style="display: block; flex: none">Despesas · Financeiro</p>
+      <nav aria-label="Seções do financeiro" style="display: flex; flex-wrap: wrap; flex-grow: 1">
+        <a href="#aprovacao" aria-current="page" style="display: flex; align-items: center; gap: 8px; min-height: 64px; padding: 0 12px; color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 600; box-shadow: inset 0 -3px 0 #FFC844">Aprovação <span style="padding: 2px 8px; border-radius: 999px; background: #FFC844; color: #211261; font-size: 13px">12</span></a>
+        <a href="#titulos" style="display: flex; align-items: center; gap: 8px; min-height: 64px; padding: 0 12px; color: #D9D6EE; text-decoration: none; font-size: 15px">Títulos</a>
+        <a href="#conferencia" style="display: flex; align-items: center; gap: 8px; min-height: 64px; padding: 0 12px; color: #D9D6EE; text-decoration: none; font-size: 15px">Conferência</a>
+        <a href="#baixas" style="display: flex; align-items: center; gap: 8px; min-height: 64px; padding: 0 12px; color: #D9D6EE; text-decoration: none; font-size: 15px">Baixas pendentes <span style="font-size: 13px">5</span></a>
+        <a href="#faturas" style="display: flex; align-items: center; gap: 8px; min-height: 64px; padding: 0 12px; color: #D9D6EE; text-decoration: none; font-size: 15px">Faturas a vencer <span style="font-size: 13px">2</span></a>
+        <a href="#erros" style="display: flex; align-items: center; gap: 8px; min-height: 64px; padding: 0 12px; color: #D9D6EE; text-decoration: none; font-size: 15px">Erros <span style="font-size: 13px">1</span></a>
+        <a href="#planos" style="display: flex; align-items: center; gap: 8px; min-height: 64px; padding: 0 12px; color: #D9D6EE; text-decoration: none; font-size: 15px">Planos financeiros</a>
+      </nav>
+      <div data-direita="1" style="margin-left: auto; display: flex; align-items: center; gap: 16px">
+        <a href="#nova" style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 10px; background: #FFC844; color: #211261; text-decoration: none; font-size: 15px; font-weight: 600">Nova despesa</a>
+        <a href="#administracao" style="color: #D9D6EE; font-size: 15px; text-decoration: none">Administração</a>
+        <button type="button" aria-label="Meu usuário: Camilla" style="width: 40px; height: 40px; border-radius: 20px; border: 0; background: #FFFFFF; color: #211261; font-family: inherit; font-size: 13px; font-weight: 600">CT</button>
+      </div>
+    </div>
+  </header>
+
+  <main style="max-width: 1440px; margin: 0 auto; padding: 24px 32px 48px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+    <section aria-labelledby="titulo-pendentes" style="flex: 1 1 340px; min-width: 0; max-width: 100%; background: #FFFFFF; border-radius: 12px; border: 1px solid #E3E1EC; display: flex; flex-direction: column">
+      <div style="padding: 20px 20px 16px; display: flex; flex-direction: column; gap: 12px">
+        <div style="display: flex; align-items: baseline; gap: 8px">
+          <h1 id="titulo-pendentes" style="margin: 0; font-size: 24px; line-height: 1.2; font-weight: 600; color: #211261">Pendentes</h1>
+          <span style="font-size: 15px; color: #5B5876">12 · mais antigas primeiro</span>
+        </div>
+        <label for="busca" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Buscar despesa</label>
+        <input id="busca" placeholder="Buscar credor, número ou colaborador" style="height: 44px; padding: 0 12px; border: 1px solid #CFCCDA; border-radius: 8px; font-family: inherit; font-size: 15px; color: #1D1A33">
+        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+          <label for="f-empresa" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Empresa</label>
+          <select id="f-empresa" style="height: 44px; padding: 0 10px; border: 1px solid #CFCCDA; border-radius: 8px; background: #FFFFFF; font-family: inherit; font-size: 13px; color: #1D1A33"><option>Todas as empresas</option></select>
+          <label for="f-colab" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Colaborador</label>
+          <select id="f-colab" style="height: 44px; padding: 0 10px; border: 1px solid #CFCCDA; border-radius: 8px; background: #FFFFFF; font-family: inherit; font-size: 13px; color: #1D1A33"><option>Todos os colaboradores</option></select>
+          <label for="f-periodo" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Período</label>
+          <select id="f-periodo" style="height: 44px; padding: 0 10px; border: 1px solid #CFCCDA; border-radius: 8px; background: #FFFFFF; font-family: inherit; font-size: 13px; color: #1D1A33"><option>Outubro de 2026</option></select>
+        </div>
+      </div>
+      <ul style="list-style: none; margin: 0; padding: 0; border-top: 1px solid #E3E1EC">
+        <sc-for list="{{ pendentes }}" as="d" hint-placeholder-count="6">
+          <li style="border-bottom: 1px solid #EEEDF3">
+            <a href="#despesa" aria-current="{{ d.atual }}" style="display: flex; flex-direction: column; gap: 4px; padding: 14px 20px; text-decoration: none; color: #1D1A33; background: {{ d.fundo }}">
+              <span style="display: flex; justify-content: space-between; gap: 12px">
+                <span style="font-size: 15px; line-height: 1.3; font-weight: 600; color: #211261; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{ d.credor }}</span>
+                <span style="flex: none; font-size: 15px; line-height: 1.3; font-weight: 600">{{ d.valor }}</span>
+              </span>
+              <span style="display: flex; justify-content: space-between; gap: 12px; font-size: 13px; line-height: 1.4; color: #5B5876">
+                <span>{{ d.meta }}</span><span style="flex: none">{{ d.quando }}</span>
+              </span>
+              <sc-if value="{{ d.temAviso }}" hint-placeholder-val="{{ false }}">
+                <span style="font-size: 13px; line-height: 1.4; font-weight: 500; color: #7A5200">{{ d.aviso }}</span>
+              </sc-if>
+            </a>
+          </li>
+        </sc-for>
+      </ul>
+    </section>
+
+    <section aria-labelledby="titulo-despesa" style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+      <div style="background: #FFFFFF; border-radius: 12px; border: 2px solid #211261; padding: 24px; display: flex; flex-direction: column; gap: 20px">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 16px">
+          <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
+            <span style="align-self: flex-start; padding: 2px 10px; border-radius: 999px; background: #EEEDF7; color: #211261; font-size: 13px; line-height: 1.6; font-weight: 600">Editando</span>
+            <h2 id="titulo-despesa" style="margin: 0; font-size: 24px; line-height: 1.2; font-weight: 600; color: #211261">MORELATE DISTRIBUIDORA DE AUTO PEÇAS</h2>
+            <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #5B5876">Enviada por Matheus Souza · hoje, 09:42</p>
+          </div>
+          <p style="margin: 0; font-size: 24px; line-height: 1.2; font-weight: 600">R$ 900,00</p>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+          <button type="button" style="height: 48px; padding: 0 20px; border: 0; border-radius: 10px; background: #211261; color: #FFFFFF; font-family: inherit; font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 10px">Salvar alterações <kbd style="padding: 1px 6px; border-radius: 4px; background: #3A2A8C; font-family: inherit; font-size: 13px">Ctrl S</kbd></button>
+          <button type="button" style="height: 48px; padding: 0 16px; border: 1.5px solid #211261; border-radius: 10px; background: #FFFFFF; color: #211261; font-family: inherit; font-size: 15px; font-weight: 500; display: flex; align-items: center; gap: 10px">Cancelar edição <kbd style="padding: 1px 6px; border-radius: 4px; background: #EEEDF7; font-family: inherit; font-size: 13px">Esc</kbd></button>
+          <p style="margin: 0 0 0 auto; font-size: 13px; line-height: 1.4; color: #5B5876">1 campo alterado · fica no histórico com o valor anterior</p>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start">
+        <figure style="margin: 0; flex: 1 1 360px; min-width: 0; background: #FFFFFF; border-radius: 12px; border: 1px solid #E3E1EC; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+          <div aria-label="Prévia do comprovante nota-085414.pdf" role="img" style="height: 560px; border-radius: 8px; background: #EEEDF3; display: flex; align-items: center; justify-content: center; font-size: 15px; color: #5B5876">Prévia do DANFE</div>
+          <figcaption style="display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 13px; line-height: 1.4; color: #5B5876">
+            <span>nota-085414.pdf · DANFe · 214 KB</span>
+            <a href="#abrir" style="font-size: 13px">Abrir em tela cheia</a>
+          </figcaption>
+        </figure>
+
+        <form style="flex: 1 1 400px; min-width: 0; background: #FFFFFF; border-radius: 12px; border: 1px solid #E3E1EC; padding: 20px; display: flex; flex-direction: column; gap: 24px">
+          <section aria-labelledby="e-documento" style="display: flex; flex-direction: column; gap: 12px">
+            <h3 id="e-documento" style="margin: 0; font-size: 15px; line-height: 1.4; font-weight: 600; color: #211261">Documento</h3>
+            <div style="display: flex; flex-direction: column; gap: 4px"><label for="e-emp" style="font-size: 13px; line-height: 1.4; color: #5B5876">Empresa</label><select id="e-emp" style="height: 40px; padding: 0 10px; border: 1px solid #CFCCDA; border-radius: 8px; background: #FFFFFF; font-family: inherit; font-size: 15px; color: #1D1A33; min-width: 0; box-sizing: border-box; width: 100%"><option>1 · Soluções em Consultoria e Obras</option></select></div>
+            <div style="display: flex; flex-direction: column; gap: 4px"><label for="e-cred" style="font-size: 13px; line-height: 1.4; color: #5B5876">Credor</label><input id="e-cred" value="04.125.812/0005-48 · MORELATE DISTRIBUIDORA DE AUTO PEÇAS" style="height: 40px; padding: 0 10px; border: 1px solid #CFCCDA; border-radius: 8px; background: #FFFFFF; font-family: inherit; font-size: 15px; color: #1D1A33; min-width: 0; box-sizing: border-box; width: 100%"></div>
+            <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 16px">
+              <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0"><label for="e-tipo" style="font-size: 13px; line-height: 1.4; color: #5B5876">Tipo</label><select id="e-tipo" style="height: 40px; padding: 0 10px; border: 1px solid #CFCCDA; border-radius: 8px; background: #FFFFFF; font-family: inherit; font-size: 15px; color: #1D1A33; min-width: 0; box-sizing: border-box; width: 100%"><option>DANF</option></select></div>
+              <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0"><label for="e-num" style="font-size: 13px; line-height: 1.4; color: #5B5876">Número</label><input id="e-num" value="085.414" style="height: 40px; padding: 0 10px; border: 1px solid #CFCCDA; border-radius: 8px; background: #FFFFFF; font-family: inherit; font-size: 15px; color: #1D1A33; min-width: 0; box-sizing: border-box; width: 100%"></div>
+              <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0"><label for="e-emi" style="font-size: 13px; line-height: 1.4; color: #5B5876">Emissão</label><input id="e-emi" value="26/10/2026" style="height: 40px; padding: 0 10px; border: 1px solid #CFCCDA; border-radius: 8px; background: #FFFFFF; font-family: inherit; font-size: 15px; color: #1D1A33; min-width: 0; box-sizing: border-box; width: 100%"></div>
+              <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0"><label for="e-val" style="font-size: 13px; line-height: 1.4; color: #5B5876">Valor total</label><input id="e-val" value="R$ 900,00" style="height: 40px; padding: 0 10px; border: 1px solid #CFCCDA; border-radius: 8px; background: #FFFFFF; font-family: inherit; font-size: 15px; color: #1D1A33; min-width: 0; box-sizing: border-box; width: 100%"></div>
+              <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0"><span style="font-size: 13px; line-height: 1.4; color: #5B5876">Data contábil</span><span style="font-size: 15px; line-height: 40px">26/10/2026 <span style="font-size: 13px; color: #5B5876">· calculada</span></span></div>
+              <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0"><span style="font-size: 13px; line-height: 1.4; color: #5B5876">Data base</span><span style="font-size: 15px; line-height: 40px">01/10/2026 <span style="font-size: 13px; color: #5B5876">· calculada</span></span></div>
+            </div>
+          </section>
+
+          <section aria-labelledby="e-pag" style="display: flex; flex-direction: column; gap: 8px">
+            <h3 id="e-pag" style="margin: 0; font-size: 15px; line-height: 1.4; font-weight: 600; color: #211261">Pagamento</h3>
+            <fieldset style="margin: 0; padding: 0; border: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px">
+              <legend style="padding: 0; margin-bottom: 6px; font-size: 13px; line-height: 1.4; color: #5B5876">A nota já está paga?</legend>
+              <label style="display: flex; align-items: center; gap: 6px; min-height: 40px; font-size: 15px"><input type="radio" name="e-paga"> Sim</label>
+              <label style="display: flex; align-items: center; gap: 6px; min-height: 40px; font-size: 15px"><input type="radio" name="e-paga" checked="checked"> Não</label>
+            </fieldset>
+            <table style="width: 100%; border-collapse: collapse; font-size: 15px">
+              <thead><tr style="font-size: 13px; color: #5B5876; text-align: left"><th scope="col" style="padding: 6px 0; font-weight: 500; width: 64px">Parcela</th><th scope="col" style="padding: 6px 8px 6px 0; font-weight: 500">Vencimento</th><th scope="col" style="padding: 6px 0; font-weight: 500">Valor</th></tr></thead>
+              <tbody>
+                <sc-for list="{{ parcelas }}" as="p" hint-placeholder-count="3">
+                  <tr style="border-top: 1px solid #EEEDF3"><td style="padding: 6px 0">{{ p.numero }}</td><td style="padding: 6px 8px 6px 0"><input aria-label="{{ p.rotuloVenc }}" value="{{ p.vencimento }}" style="height: 40px; padding: 0 10px; border: 1px solid #CFCCDA; border-radius: 8px; background: #FFFFFF; font-family: inherit; font-size: 15px; color: #1D1A33; min-width: 0; box-sizing: border-box; width: 100%"></td><td style="padding: 6px 0"><input aria-label="{{ p.rotuloValor }}" value="{{ p.valor }}" style="height: 40px; padding: 0 10px; border: 1px solid #CFCCDA; border-radius: 8px; background: #FFFFFF; font-family: inherit; font-size: 15px; color: #1D1A33; min-width: 0; box-sizing: border-box; width: 100%"></td></tr>
+                </sc-for>
+              </tbody>
+            </table>
+          </section>
+
+          <section aria-labelledby="e-aprop" style="display: flex; flex-direction: column; gap: 8px">
+            <h3 id="e-aprop" style="margin: 0; font-size: 15px; line-height: 1.4; font-weight: 600; color: #211261">Apropriação</h3>
+            <sc-for list="{{ apropriacoes }}" as="a" hint-placeholder-count="2">
+              <div style="display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) 120px; gap: 8px; align-items: start; padding-top: 8px; border-top: 1px solid #EEEDF3">
+                <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0">
+                  <select aria-label="{{ a.rotuloCentro }}" style="height: 40px; padding: 0 10px; border: 1px solid #CFCCDA; border-radius: 8px; background: #FFFFFF; font-family: inherit; font-size: 15px; color: #1D1A33; min-width: 0; box-sizing: border-box; width: 100%; border-color: {{ a.borda }}"><option>{{ a.centro }}</option></select>
+                  <sc-if value="{{ a.alterado }}" hint-placeholder-val="{{ false }}"><span style="font-size: 13px; line-height: 1.4; color: #7A5200">Alterado · antes: {{ a.antes }}</span></sc-if>
+                </div>
+                <select aria-label="{{ a.rotuloPlano }}" style="height: 40px; padding: 0 10px; border: 1px solid #CFCCDA; border-radius: 8px; background: #FFFFFF; font-family: inherit; font-size: 15px; color: #1D1A33; min-width: 0; box-sizing: border-box; width: 100%"><option>{{ a.plano }}</option></select>
+                <input aria-label="{{ a.rotuloValor }}" value="{{ a.valor }}" style="height: 40px; padding: 0 10px; border: 1px solid #CFCCDA; border-radius: 8px; background: #FFFFFF; font-family: inherit; font-size: 15px; color: #1D1A33; min-width: 0; box-sizing: border-box; width: 100%">
+              </div>
+            </sc-for>
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; padding-top: 4px">
+              <button type="button" style="height: 40px; padding: 0 14px; border: 1.5px solid #211261; border-radius: 10px; background: #FFFFFF; color: #211261; font-family: inherit; font-size: 13px; font-weight: 500">Adicionar centro de custo</button>
+              <span style="font-size: 15px; font-weight: 600; color: #0E6245">Saldo restante: R$ 0,00</span>
+            </div>
+          </section>
+
+          <section aria-labelledby="e-obs" style="display: flex; flex-direction: column; gap: 6px">
+            <h3 id="e-obs" style="margin: 0; font-size: 15px; line-height: 1.4; font-weight: 600; color: #211261">Observação</h3>
+            <label for="e-obs-campo" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Observação</label>
+            <textarea id="e-obs-campo" rows="2" style="padding: 10px; border: 1px solid #CFCCDA; border-radius: 8px; font-family: inherit; font-size: 15px; line-height: 1.5; color: #1D1A33; resize: vertical">Faixas refletivas - GMC e EFO7F00</textarea>
+          </section>
+        </form>
+      </div>
+    </section>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1180}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      pendentes: [
+        { credor: 'MORELATE DISTRIBUIDORA DE AUTO PEÇAS', valor: 'R$ 900,00', meta: 'Matheus Souza · NF 085.414', quando: '09:42', temAviso: true, aviso: 'Parcelas diferentes das do Sienge', fundo: '#EEEDF7', atual: 'true' },
+        { credor: 'ACQUA LUZ', valor: 'R$ 35,20', meta: 'Victor Rodrigues · PAG 14/09', quando: '09:10', temAviso: true, aviso: 'Credor não cadastrado', fundo: '#FFFFFF', atual: 'false' },
+        { credor: 'FN TAG MATERIAIS EIRELI', valor: 'R$ 490,80', meta: 'Matheus Souza · NF 003.087', quando: 'ontem', temAviso: false, aviso: '', fundo: '#FFFFFF', atual: 'false' },
+        { credor: 'STARHOUSE MEGA STORE', valor: 'R$ 147,29', meta: 'Claudio Marcos · NF 003.072.580', quando: 'ontem', temAviso: false, aviso: '', fundo: '#FFFFFF', atual: 'false' },
+        { credor: 'AUTO MECÂNICA CÓRREGO D’ANTAS', valor: 'R$ 500,00', meta: 'Victor Rodrigues · REC 05/10', quando: '20/10', temAviso: false, aviso: '', fundo: '#FFFFFF', atual: 'false' },
+        { credor: 'PEDRO (colaborador)', valor: 'R$ 16,58', meta: 'Pedro · REMB 16/09', quando: '20/10', temAviso: false, aviso: '', fundo: '#FFFFFF', atual: 'false' }
+      ],
+      parcelas: [
+        { numero: '1', vencimento: '10/11/2026', valor: 'R$ 300,00', rotuloVenc: 'Vencimento da parcela 1', rotuloValor: 'Valor da parcela 1' },
+        { numero: '2', vencimento: '10/12/2026', valor: 'R$ 350,00', rotuloVenc: 'Vencimento da parcela 2', rotuloValor: 'Valor da parcela 2' },
+        { numero: '3', vencimento: '15/01/2027', valor: 'R$ 250,00', rotuloVenc: 'Vencimento da parcela 3', rotuloValor: 'Valor da parcela 3' }
+      ],
+      apropriacoes: [
+        { centro: '1062 · KML8D31 · Caminhão GMC', plano: '2.01.04.02 · Peças e componentes', valor: 'R$ 450,00', alterado: false, antes: '', borda: '#CFCCDA', rotuloCentro: 'Centro de custo da linha 1', rotuloPlano: 'Plano financeiro da linha 1', rotuloValor: 'Valor da linha 1' },
+        { centro: '1069 · LTB5H21 · Caminhão VW Constellation', plano: '2.01.04.02 · Peças e componentes', valor: 'R$ 450,00', alterado: true, antes: '1066 · EFO7F00 · Volkswagen 9.150E', borda: '#7A5200', rotuloCentro: 'Centro de custo da linha 2', rotuloPlano: 'Plano financeiro da linha 2', rotuloValor: 'Valor da linha 2' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

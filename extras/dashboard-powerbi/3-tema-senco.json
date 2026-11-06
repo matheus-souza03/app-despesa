@@ -1,0 +1,131 @@
+{
+  "name": "Senco Engenharia",
+  "dataColors": [
+    "#211261",
+    "#FFC844",
+    "#4B3FA0",
+    "#D9A21B",
+    "#8A84B8",
+    "#FFE19A",
+    "#5B5876",
+    "#0E6245",
+    "#A4251B",
+    "#CFCCDA"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#1D1A33",
+  "tableAccent": "#211261",
+  "good": "#0E6245",
+  "neutral": "#D9A21B",
+  "bad": "#A4251B",
+  "maximum": "#211261",
+  "center": "#8A84B8",
+  "minimum": "#EEEDF7",
+  "textClasses": {
+    "callout": {
+      "fontSize": 28,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#211261"
+    },
+    "title": {
+      "fontSize": 12,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#211261"
+    },
+    "header": {
+      "fontSize": 12,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#211261"
+    },
+    "label": {
+      "fontSize": 10,
+      "fontFace": "Segoe UI",
+      "color": "#5B5876"
+    }
+  },
+  "visualStyles": {
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#F6F5FA"
+              }
+            },
+            "transparency": 0
+          }
+        ]
+      }
+    },
+    "*": {
+      "*": {
+        "background": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#E3E1EC"
+              }
+            },
+            "radius": 8
+          }
+        ],
+        "title": [
+          {
+            "show": true,
+            "fontColor": {
+              "solid": {
+                "color": "#211261"
+              }
+            },
+            "fontSize": 12
+          }
+        ]
+      }
+    },
+    "slicer": {
+      "*": {
+        "items": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "#1D1A33"
+              }
+            },
+            "textSize": 10
+          }
+        ]
+      }
+    },
+    "tableEx": {
+      "*": {
+        "columnHeaders": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": "#211261"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

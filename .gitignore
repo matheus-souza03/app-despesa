@@ -1,0 +1,20 @@
+node_modules/
+.env
+.env.*
+!.env.example
+scripts/respostas/
+respostas/
+
+# build e testes
+dist/
+coverage/
+*.tsbuildinfo
+playwright-report/
+test-results/
+dev-dist/
+
+# anexos locais (storage temporário)
+.storage/
+
+# sistema
+.DS_Store

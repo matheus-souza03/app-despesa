@@ -1,0 +1,308 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "Aprovacao.dc.html": {
+      "expand": "fill",
+      "h": 1180,
+      "page": "desktop",
+      "title": "Aprovação — lista e detalhe",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "Baixas.dc.html": {
+      "expand": "fill",
+      "h": 900,
+      "page": "desktop",
+      "title": "Baixas pendentes",
+      "w": 1440,
+      "x": 0,
+      "y": 2420
+    },
+    "CadastroCompleto.dc.html": {
+      "h": 2080,
+      "page": "celular",
+      "title": "3. Nota e 3 boletos lidos, pronto para enviar",
+      "w": 390,
+      "x": 940,
+      "y": 0
+    },
+    "CadastroCredor.dc.html": {
+      "h": 1240,
+      "page": "celular",
+      "title": "2. Nota lida, credor não cadastrado",
+      "w": 390,
+      "x": 470,
+      "y": 0
+    },
+    "CadastroDesktop.dc.html": {
+      "expand": "fill",
+      "h": 1500,
+      "page": "computador",
+      "title": "Nova despesa no computador",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "Conferencia.dc.html": {
+      "expand": "fill",
+      "h": 1000,
+      "page": "desktop",
+      "title": "Conferência de notas — lançamento encontrado",
+      "w": 1440,
+      "x": 0,
+      "y": 1300
+    },
+    "ConferenciaVazia.dc.html": {
+      "expand": "fill",
+      "h": 760,
+      "page": "desktop",
+      "title": "Conferência de notas — nada encontrado",
+      "w": 1440,
+      "x": 1520,
+      "y": 1300
+    },
+    "Configuracoes.dc.html": {
+      "expand": "fill",
+      "h": 1000,
+      "page": "admin",
+      "title": "Configurações",
+      "w": 1440,
+      "x": 1520,
+      "y": 0
+    },
+    "CredorNovo.dc.html": {
+      "h": 968,
+      "page": "celular",
+      "title": "5. Cadastrar credor",
+      "w": 390,
+      "x": 2350,
+      "y": 0
+    },
+    "Faturas.dc.html": {
+      "expand": "fill",
+      "h": 1000,
+      "page": "desktop",
+      "title": "Faturas a vencer",
+      "w": 1440,
+      "x": 1520,
+      "y": 2420
+    },
+    "Importacao.dc.html": {
+      "expand": "fill",
+      "h": 1100,
+      "page": "computador",
+      "title": "Importar planilha",
+      "w": 1440,
+      "x": 1520,
+      "y": 0
+    },
+    "Login.dc.html": {
+      "h": 844,
+      "page": "celular",
+      "title": "7. Entrar",
+      "w": 390,
+      "x": 3290,
+      "y": 0
+    },
+    "Main.dc.html": {
+      "h": 844,
+      "page": "celular",
+      "title": "1. Nova despesa",
+      "w": 390,
+      "x": 0,
+      "y": 0
+    },
+    "MeuUsuario.dc.html": {
+      "h": 844,
+      "page": "celular",
+      "title": "6. Meu usuário",
+      "w": 390,
+      "x": 2820,
+      "y": 0
+    },
+    "Status.dc.html": {
+      "h": 1180,
+      "page": "celular",
+      "title": "4. Status das despesas",
+      "w": 390,
+      "x": 1880,
+      "y": 0
+    },
+    "Usuarios.dc.html": {
+      "expand": "fill",
+      "h": 1840,
+      "page": "admin",
+      "title": "Usuários",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "StatusDesktop.dc.html": {
+      "x": 3040,
+      "y": 0,
+      "w": 1440,
+      "h": 1100,
+      "title": "Status das despesas no computador",
+      "page": "computador",
+      "expand": "fill"
+    },
+    "AprovacaoEdicao.dc.html": {
+      "x": 1520,
+      "y": 0,
+      "w": 1440,
+      "h": 1180,
+      "title": "Aprovação — editando a despesa na própria tela",
+      "page": "desktop",
+      "expand": "fill"
+    },
+    "Erros.dc.html": {
+      "x": 3040,
+      "y": 0,
+      "w": 1440,
+      "h": 1000,
+      "title": "Erros no lançamento",
+      "page": "desktop",
+      "expand": "fill"
+    },
+    "ConsultaTitulos.dc.html": {
+      "x": 3040,
+      "y": 2420,
+      "w": 1440,
+      "h": 1100,
+      "title": "Títulos — consulta de todos os títulos",
+      "page": "desktop",
+      "expand": "fill"
+    },
+    "CadastroRua.dc.html": {
+      "x": 1410,
+      "y": 0,
+      "w": 390,
+      "h": 1720,
+      "title": "8. Nova despesa — colaborador de rua (sem centro de custo)",
+      "page": "celular"
+    },
+    "AprovacaoCC.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1180,
+      "title": "Definir centro de custo das despesas de rua",
+      "page": "aprovcc",
+      "expand": "fill"
+    },
+    "PlanosFinanceiros.dc.html": {
+      "x": 0,
+      "y": 3640,
+      "w": 1440,
+      "h": 2120,
+      "title": "Planos financeiros (aprovador e aprovador de centro de custo)",
+      "page": "desktop",
+      "expand": "fill"
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-10-23T14:58:48Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "page": "celular",
+    "view": "canvas"
+  },
+  "notes": {
+    "titulo-admin": {
+      "kind": "title1",
+      "maxW": 2960,
+      "page": "admin",
+      "text": "Administração — computador",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "titulo-celular": {
+      "kind": "title1",
+      "maxW": 3680,
+      "page": "celular",
+      "text": "Colaborador — celular",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "titulo-computador": {
+      "kind": "title1",
+      "maxW": 4480,
+      "page": "computador",
+      "text": "Colaborador — computador",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "titulo-desktop": {
+      "kind": "title1",
+      "maxW": 4480,
+      "page": "desktop",
+      "text": "Financeiro — computador",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "titulo-aprovcc": {
+      "x": 0,
+      "y": -300,
+      "text": "Aprovador de centro de custo — computador",
+      "kind": "title1",
+      "maxW": 1440,
+      "page": "aprovcc"
+    }
+  },
+  "order": [
+    "Login.dc.html",
+    "Main.dc.html",
+    "CadastroCredor.dc.html",
+    "CadastroCompleto.dc.html",
+    "CadastroRua.dc.html",
+    "Status.dc.html",
+    "CredorNovo.dc.html",
+    "MeuUsuario.dc.html",
+    "AprovacaoCC.dc.html",
+    "Aprovacao.dc.html",
+    "AprovacaoEdicao.dc.html",
+    "Erros.dc.html",
+    "CadastroDesktop.dc.html",
+    "StatusDesktop.dc.html",
+    "Importacao.dc.html",
+    "Conferencia.dc.html",
+    "ConferenciaVazia.dc.html",
+    "Baixas.dc.html",
+    "Faturas.dc.html",
+    "Usuarios.dc.html",
+    "Configuracoes.dc.html",
+    "ConsultaTitulos.dc.html",
+    "PlanosFinanceiros.dc.html"
+  ],
+  "pages": [
+    {
+      "id": "celular",
+      "name": "Colaborador — celular"
+    },
+    {
+      "id": "computador",
+      "name": "Colaborador — computador"
+    },
+    {
+      "id": "aprovcc",
+      "name": "Aprovador de centro de custo — computador"
+    },
+    {
+      "id": "desktop",
+      "name": "Financeiro — computador"
+    },
+    {
+      "id": "admin",
+      "name": "Administração — computador"
+    }
+  ],
+  "title": "App de despesas Senco — wireframes"
+}
