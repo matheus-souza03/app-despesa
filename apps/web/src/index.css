@@ -1,0 +1,34 @@
+@import 'tailwindcss';
+
+/* Tokens de docs/design-system.md */
+@theme {
+  --font-sans: 'Barlow', ui-sans-serif, system-ui, sans-serif;
+
+  --color-primaria: #211261;
+  --color-primaria-hover: #3a2a8c;
+  --color-destaque: #ffc844;
+  --color-texto: #1d1a33;
+  --color-texto-suave: #5b5876;
+  --color-texto-cabecalho: #d9d6ee;
+  --color-fundo-pagina: #f6f5fa;
+  --color-superficie: #ffffff;
+  --color-borda: #e3e1ec;
+  --color-borda-campo: #cfccda;
+  --color-divisoria: #eeedf3;
+  --color-selecionado: #eeedf7;
+  --color-sucesso: #0e6245;
+  --color-sucesso-fundo: #e5f4ee;
+  --color-erro: #a4251b;
+  --color-erro-fundo: #fdecea;
+  --color-alerta-texto: #5c3d00;
+  --color-alerta-fundo: #fff4d6;
+  --color-alerta-destaque: #7a5200;
+
+  --radius-campo: 8px;
+  --radius-botao: 10px;
+  --radius-cartao: 12px;
+}
+
+body {
+  @apply bg-fundo-pagina font-sans text-texto;
+}

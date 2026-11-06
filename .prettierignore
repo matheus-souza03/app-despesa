@@ -1,0 +1,14 @@
+pnpm-lock.yaml
+**/dist/
+**/dev-dist/
+coverage/
+packages/db/migrations/
+# Documentação, features e dados ficam como estão (tabelas alinhadas à mão)
+*.md
+docs/
+features/
+data/
+extras/
+scripts/
+assets/
+.claude/
